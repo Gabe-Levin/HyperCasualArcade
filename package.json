@@ -1,0 +1,22 @@
+{
+  "name": "cw_solo_hypercasualarcade",
+  "version": "1.0.0",
+  "description": "This is my solo project as part of the Codeworks software development program. We are given one week to complete a full-stack app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabe-Levin/CW_Solo_HyperCasualArcade.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabe-Levin/CW_Solo_HyperCasualArcade/issues"
+  },
+  "homepage": "https://github.com/Gabe-Levin/CW_Solo_HyperCasualArcade#readme",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
