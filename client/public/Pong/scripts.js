@@ -17,7 +17,7 @@ function update(time) {
     const hue = parseFloat(
       getComputedStyle(document.documentElement).getPropertyValue("--hue")
     );
-    console.log(pauser);
+    // console.log(pauser);
 
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01);
 
@@ -27,7 +27,7 @@ function update(time) {
     }
 
     if (isLose()) {
-      console.log("lose");
+      // console.log("lose");
       handleLose();
     }
   }

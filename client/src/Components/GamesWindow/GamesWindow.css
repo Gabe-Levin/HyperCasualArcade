@@ -1,0 +1,15 @@
+#gameWindow{
+  position: relative;
+  height: 45vh;
+  width: 75vw;
+  background-color: red;
+  align-self: center;
+}
+
+#gameWindowContainer{
+  width:100vw;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

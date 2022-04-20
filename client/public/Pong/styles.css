@@ -70,10 +70,10 @@ body{
   border-right: .5vh solid var(--foreground-color)
 }
 
-.pauseImgDiv{
+/* .pauseImgDiv{
   display: flex;
   justify-content: center;
-}
+} */
 
 .pauseMsg{
   display:block;

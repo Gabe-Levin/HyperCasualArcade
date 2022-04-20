@@ -1,12 +1,14 @@
 import "./App.css";
-import GamesWindow from "./Components/GamesWindow";
-import Header from "./Components/Header";
+import GamesDashboard from "./Components/GamesDashboard/GamesDashboard";
+import GamesWindow from "./Components/GamesWindow/GamesWindow";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
     <div>
       <Header />
       <GamesWindow />
+      <GamesDashboard />
     </div>
   );
 }
