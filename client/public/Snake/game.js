@@ -18,7 +18,9 @@ function main(currentTime) {
   // console.log(__dirname);
   if (gameOver) {
     if (confirm("you lost. Press ok to restart.")) {
-      window.location = "/client/public/Snake/index.html";
+      // window.location = "/client/public/Snake/index.html";
+      window.parent.postMessage("game ended", "*");
+      console.log(window.parent);
     }
     return;
   }
