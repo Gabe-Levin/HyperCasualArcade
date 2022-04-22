@@ -55,5 +55,5 @@ function handleLose() {
     subtitle.classList.remove("hide");
     subtitle.textContent = `${getPassedPipesCount()} Pipes`;
     document.addEventListener("keypress", handleStart, { once: true });
-  }, 100);
+  }, 200);
 }

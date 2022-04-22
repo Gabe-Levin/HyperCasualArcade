@@ -5,6 +5,7 @@
 body{
   margin: 0;
   overflow: hidden;
+  background-image: url("../imgs/FlappyBirdBackground.png")
 }
 
 .title {
@@ -26,7 +27,7 @@ body{
   display: none;
 }
 .bird{
-  --bird-size: 60px;
+  --bird-size: 30px;
   --bird-top:-1000;
   position: absolute;
   background-color: hsl(50,75%, 50%);
@@ -35,6 +36,7 @@ body{
   left: var(--bird-size);
   top: calc(var(--bird-top)*1px);
   border-radius:50%;
+  margin-left: 10vw;
 }
 
 .pipe{
