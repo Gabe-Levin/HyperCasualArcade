@@ -10,29 +10,21 @@ export default function GamesWindow({ gameSelector }) {
     JSON.parse(localStorage.getItem("snakeScores")).slice(0, 10)
   );
 
+  function gameWindowSwitcher(gameSelector) {
+    if (gameSelector === "snake") {
+      return <Snake setHighScores={setHighScores} />;
+    }
+    if (gameSelector === "pong") {
+      return <Pong setHighScores={setHighScores} />;
+    }
+    if (gameSelector === "snakeScores") {
+      return <HighScores scores={highScores} />;
+    }
+  }
+
   return (
     <div id="gameWindowContainer">
-      <div id="gameWindow">
-        {gameSelector === "snake" ? (
-          <Snake setHighScores={setHighScores} />
-        ) : (
-          <Pong setHighScores={setHighScores} />
-        )}
-        <HighScores scores={highScores} />
-      </div>
+      <div id="gameWindow">{gameWindowSwitcher(gameSelector)}</div>
     </div>
   );
 }
-
-//Scrapyard
-// let currentGame = <Pong />;
-// useEffect(() => {
-//   // console.log("gameSelector", gameSelector);
-//   if (gameSelector === "pong") {
-//     setCurrentGame(<Pong setHighScores={setHighScores} />);
-//     // setCurrentGame(<Pong setHighScores={setHighScores} />);
-//   }
-//   if (gameSelector === "snake") {
-//     setCurrentGame(<Snake randomStr={"hello"} />);
-//   }
-// }, [gameSelector]);

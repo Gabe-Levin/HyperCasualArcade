@@ -6,12 +6,12 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function SnakeCard({ setGameSelector }) {
-  function handleMainClick() {
-    setGameSelector("snake");
+  function handleMainClick(text) {
+    setGameSelector(text);
   }
   return (
     <Card sx={{ maxWidth: 250 }}>
-      <CardActionArea onClick={() => handleMainClick()}>
+      <CardActionArea onClick={() => handleMainClick("snake")}>
         <CardMedia
           component="img"
           height="140"
@@ -29,7 +29,11 @@ export default function SnakeCard({ setGameSelector }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button
+          onClick={() => handleMainClick("snakeScores")}
+          size="small"
+          color="primary"
+        >
           High Scores
         </Button>
       </CardActions>

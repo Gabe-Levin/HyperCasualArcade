@@ -7,12 +7,12 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import "./PongCard.css";
 
 export default function PongCard({ setGameSelector }) {
-  function handleMainClick() {
-    setGameSelector("pong");
+  function handleMainClick(text) {
+    setGameSelector(text);
   }
   return (
     <Card sx={{ maxWidth: 250 }}>
-      <CardActionArea onClick={() => handleMainClick()}>
+      <CardActionArea onClick={() => handleMainClick("pong")}>
         <CardMedia
           component="img"
           height="140"

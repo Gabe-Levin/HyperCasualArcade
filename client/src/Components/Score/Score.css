@@ -1,0 +1,15 @@
+.score{
+  color:white;
+  margin-left: 50px;
+}
+
+.position{
+  color:white;
+  margin-left: 25px;
+}
+
+.scoreContainer{
+  display: flex;
+  flex-direction: row;
+
+}
