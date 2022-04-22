@@ -5,7 +5,7 @@ import Header from "./Components/Header/Header";
 import { useState } from "react";
 
 function App() {
-  const [gameSelector, setGameSelector] = useState("");
+  const [gameSelector, setGameSelector] = useState("snake");
   return (
     <div>
       <Header />

@@ -8,7 +8,6 @@ import "./PongCard.css";
 
 export default function PongCard({ setGameSelector }) {
   function handleMainClick() {
-    console.log("handleclick PONG!!!");
     setGameSelector("pong");
   }
   return (

@@ -7,7 +7,6 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function SnakeCard({ setGameSelector }) {
   function handleMainClick() {
-    console.log("SNAKKKKE CLICKED");
     setGameSelector("snake");
   }
   return (

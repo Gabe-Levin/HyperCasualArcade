@@ -13,14 +13,17 @@ import { update as updateFood, draw as drawFood } from "./food.js";
 let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById("game-board");
+const finalScore = Math.random();
 
 function main(currentTime) {
   // console.log(__dirname);
   if (gameOver) {
+    window.parent.postMessage(`finalScore : ${finalScore} `, "*");
+
     if (confirm("you lost. Press ok to restart.")) {
       // window.location = "/client/public/Snake/index.html";
       window.parent.postMessage("game ended", "*");
-      console.log(window.parent);
+      // console.log(window.parent);
     }
     return;
   }

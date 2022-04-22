@@ -27,7 +27,6 @@ export default class Ball {
   }
 
   reset() {
-    console.log("this is reset");
     this.x = 50;
     this.y = 50;
     this.direction = { x: 0 };
@@ -38,7 +37,7 @@ export default class Ball {
       const heading = randomNumberBetween(0, 2 * Math.PI);
       this.direction = { x: Math.cos(heading), y: Math.sin(heading) };
     }
-    console.log(this.direction);
+    // console.log(this.direction);
     this.velocity = INITIAL_VELOCITY;
   }
 
