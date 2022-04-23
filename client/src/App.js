@@ -8,6 +8,18 @@ function App() {
   const [gameSelector, setGameSelector] = useState("flappyBird");
   const [highScores, setHighScores] = useState([]);
 
+  useEffect(() => {
+    document.addEventListener(
+      "keydown",
+      function (e) {
+        if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+          e.preventDefault();
+        }
+      },
+      []
+    );
+  });
+
   return (
     <div>
       <Header />

@@ -16,6 +16,12 @@ let gameOver = false;
 const gameBoard = document.getElementById("game-board");
 // let username = "";
 
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.code === "Space") {
+    e.preventDefault();
+  }
+});
+
 function main(currentTime) {
   // if (username === "") {
   //   username = prompt("Enter your username");

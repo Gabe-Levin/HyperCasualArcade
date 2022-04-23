@@ -8,8 +8,29 @@ const playerScoreElem = document.getElementById("player-score");
 const computerScoreElem = document.getElementById("computer-score");
 const pauseMsg = document.querySelector(".pauseMsg");
 
+const title = document.querySelector("[data-title]");
+const subtitle = document.querySelector("[data-subtitle]");
+
 let lastTime;
 let pauser = false;
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.code === "Space") {
+    e.preventDefault();
+  }
+});
+
+document.addEventListener(
+  "keypress",
+  function (e) {
+    console.log("we in here");
+    if (e.key === "Enter") {
+      handleStart();
+    }
+  },
+  { once: true }
+);
+
 function update(time) {
   if (lastTime != null) {
     const delta = time - lastTime;
@@ -30,7 +51,7 @@ function update(time) {
     }
 
     if (isGameOver()) {
-      handleGameOver();
+      return handleGameOver();
     }
   }
   lastTime = time;
@@ -64,7 +85,39 @@ function handleLose() {
 }
 
 function handleGameOver() {
-  //HEREEEE
+  console.log("HANDLEING GAME OVER!!!");
+  window.parent.postMessage(`finalScore : ${getFinalScores()} `, "*");
+  setTimeout(() => {
+    title.classList.remove("hide");
+    subtitle.classList.remove("hide");
+    subtitle.textContent = `${getFinalScores()} Goals`;
+    // document.addEventListener("keypress", handleStart, { once: true });
+
+    document.addEventListener(
+      "keypress",
+      function (e) {
+        console.log("we in here");
+        if (e.key === "Enter") {
+          handleStart();
+        }
+      },
+      { once: true }
+    );
+  }, 200);
+}
+
+function handleStart() {
+  title.classList.add("hide");
+  playerScoreElem.textContent = "0";
+  computerScoreElem.textContent = "0";
+  window.requestAnimationFrame(update);
+}
+
+function getFinalScores() {
+  const score =
+    parseInt(playerScoreElem.textContent) -
+    parseInt(computerScoreElem.textContent);
+  return score > 0 ? score : 0;
 }
 
 //moving paddles
@@ -84,4 +137,4 @@ document.body.onkeyup = function (e) {
   }
 };
 
-window.requestAnimationFrame(update);
+// window.requestAnimationFrame(update);

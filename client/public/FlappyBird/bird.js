@@ -1,5 +1,5 @@
 const birdElem = document.querySelector("[data-bird]");
-const BIRD_SPEED = 0.35;
+const BIRD_SPEED = 0.175;
 const JUMP_DURATION = 200;
 let timeSinceLastJump = Number.POSITIVE_INFINITY;
 

@@ -1,15 +1,38 @@
 import "./Pong.css";
+import { useEffect, useState } from "react";
+import { sortScores } from "../../utils/sort";
 
-import React, { useEffect } from "react";
+export default function Pong({ setHighScores }) {
+  const [src, setSrc] = useState("Pnake/index.html");
 
-export default function Pong() {
-  let iframe = document.createElement("iframe");
-  // useEffect(() => {
-  //   window.addEventListener("message", function (e) {
-  //     console.log("event listener running");
-  //     console.log(e.data);
-  //   });
-  // }, []);
+  const getRandomStr = () => Math.random();
+  let newScores;
+  let savedScores = JSON.parse(localStorage.getItem("pongScores"));
+
+  useEffect(() => {
+    const handleMessage = function (e) {
+      let msgStr = e.data;
+      let randomStr = getRandomStr();
+      if (typeof msgStr === "string") {
+        if (msgStr === "game ended") setSrc("Pong/index.html?" + randomStr);
+        if (msgStr.startsWith("finalScore")) {
+          let finalScore = msgStr.substring(12, msgStr.length - 1);
+          let oldScores = JSON.parse(localStorage.getItem("pongScores"));
+          if (!oldScores) {
+            newScores = [finalScore];
+          } else {
+            newScores = sortScores([...oldScores, finalScore]);
+          }
+          localStorage.setItem("pongScores", JSON.stringify(newScores));
+          savedScores = JSON.parse(localStorage.getItem("pongScores"));
+          setHighScores(savedScores.slice(0, 10));
+        }
+      }
+    };
+
+    const id = window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
 
   return <iframe id="pongFrame" src="pong/index.html" />;
 }

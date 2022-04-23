@@ -28,7 +28,6 @@ export default function FlappyBird({ setHighScores }) {
           }
           localStorage.setItem("flappyBirdScores", JSON.stringify(newScores));
           savedScores = JSON.parse(localStorage.getItem("flappyBirdScores"));
-          console.log("I'm SavedScores____", savedScores);
           setHighScores(savedScores?.slice(0, 10));
         }
       }

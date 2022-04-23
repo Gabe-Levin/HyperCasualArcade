@@ -5,7 +5,10 @@
 body{
   margin: 0;
   overflow: hidden;
-  background-image: url("../imgs/FlappyBirdBackground.png")
+  background-image: url("../imgs/FlappyBirdBackground.png");
+  height: 400px;
+  width: 550px;
+  background-size: cover;
 }
 
 .title {
@@ -30,13 +33,13 @@ body{
   --bird-size: 30px;
   --bird-top:-1000;
   position: absolute;
-  background-color: hsl(50,75%, 50%);
+  /* background-color: hsl(50,75%, 50%); */
   width: var(--bird-size);
   height: var(--bird-size);
   left: var(--bird-size);
   top: calc(var(--bird-top)*1px);
   border-radius:50%;
-  margin-left: 10vw;
+  /* margin-left: 10vw; */
 }
 
 .pipe{

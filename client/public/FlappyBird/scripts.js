@@ -6,6 +6,11 @@ import {
   getPipeRects,
 } from "./pipe.js";
 
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.code === "Space") {
+    e.preventDefault();
+  }
+});
 document.addEventListener("keypress", handleStart, { once: true });
 const title = document.querySelector("[data-title]");
 const subtitle = document.querySelector("[data-subtitle]");

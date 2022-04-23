@@ -10,7 +10,12 @@ export default function GamesWindow({
   highScores,
   setHighScores,
 }) {
+  let localScores = JSON.parse(localStorage.getItem(gameSelector))
+    ? JSON.parse(localStorage.getItem(gameSelector)).slice(0, 10)
+    : [];
+
   function gameWindowSwitcher(gameSelector) {
+    console.log("gameSelector", gameSelector);
     if (gameSelector === "snake") {
       return <Snake setHighScores={setHighScores} />;
     }
@@ -21,24 +26,26 @@ export default function GamesWindow({
       return <FlappyBird setHighScores={setHighScores} />;
     }
     if (gameSelector === "snakeScores") {
-      if (highScores === [])
-        setHighScores(
-          JSON.parse(localStorage.getItem(gameSelector)).slice(0, 10)
-        );
+      if (highScores === []) setHighScores(localScores);
       return <HighScores scores={highScores} />;
     }
     if (gameSelector === "flappyBirdScores") {
-      if (highScores === [])
-        setHighScores(
-          JSON.parse(localStorage.getItem(gameSelector)).slice(0, 10)
-        );
-
+      if (highScores === []) setHighScores(localScores);
+      return <HighScores scores={highScores} />;
+    }
+    if (gameSelector === "pongScores") {
+      if (highScores === []) setHighScores(localScores);
       return <HighScores scores={highScores} />;
     }
   }
 
   return (
     <div id="gameWindowContainer">
+      <img
+        src="./imgs/backgroundAssets/meteor.gif"
+        alt="Bomberman"
+        className="meteor hide"
+      ></img>
       <div id="gameWindow">{gameWindowSwitcher(gameSelector)}</div>
     </div>
   );
