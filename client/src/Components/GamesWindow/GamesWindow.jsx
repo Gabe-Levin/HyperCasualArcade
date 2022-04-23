@@ -10,11 +10,7 @@ export default function GamesWindow({
   highScores,
   setHighScores,
 }) {
-  // const [currentGame, setCurrentGame] = useState(<Snake />);
-  // const [highScores, setHighScores] = useState([]);
-
   function gameWindowSwitcher(gameSelector) {
-    console.log("gameWindowSwitcher running", gameSelector);
     if (gameSelector === "snake") {
       return <Snake setHighScores={setHighScores} />;
     }

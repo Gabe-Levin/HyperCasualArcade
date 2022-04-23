@@ -17,7 +17,6 @@ function update(time) {
     const hue = parseFloat(
       getComputedStyle(document.documentElement).getPropertyValue("--hue")
     );
-    // console.log(pauser);
 
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01);
 
@@ -27,8 +26,11 @@ function update(time) {
     }
 
     if (isLose()) {
-      // console.log("lose");
       handleLose();
+    }
+
+    if (isGameOver()) {
+      handleGameOver();
     }
   }
   lastTime = time;
@@ -40,6 +42,16 @@ function isLose() {
   return rect.right >= window.innerWidth || rect.left <= 0;
 }
 
+function isGameOver() {
+  if (
+    playerScoreElem.textContent === "7" ||
+    computerScoreElem.textContent === "7"
+  ) {
+    return true;
+  }
+  return false;
+}
+
 function handleLose() {
   const rect = ball.rect();
   if (rect.right >= window.innerWidth) {
@@ -49,6 +61,10 @@ function handleLose() {
   }
   ball.reset();
   computerPaddle.reset();
+}
+
+function handleGameOver() {
+  //HEREEEE
 }
 
 //moving paddles

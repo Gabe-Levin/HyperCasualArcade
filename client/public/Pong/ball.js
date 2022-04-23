@@ -37,7 +37,6 @@ export default class Ball {
       const heading = randomNumberBetween(0, 2 * Math.PI);
       this.direction = { x: Math.cos(heading), y: Math.sin(heading) };
     }
-    // console.log(this.direction);
     this.velocity = INITIAL_VELOCITY;
   }
 
