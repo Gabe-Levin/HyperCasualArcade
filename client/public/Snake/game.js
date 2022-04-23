@@ -4,6 +4,7 @@ import {
   draw as drawSnake,
   getSnakeHead,
   snakeIntersection,
+  getFinalScore,
 } from "./snake.js";
 
 import { outsideGrid } from "./grid.js";
@@ -13,17 +14,17 @@ import { update as updateFood, draw as drawFood } from "./food.js";
 let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById("game-board");
-const finalScore = Math.random();
+// let username = "";
 
 function main(currentTime) {
-  // console.log(__dirname);
+  // if (username === "") {
+  //   username = prompt("Enter your username");
+  // }
   if (gameOver) {
-    window.parent.postMessage(`finalScore : ${finalScore} `, "*");
+    window.parent.postMessage(`finalScore : ${getFinalScore()} `, "*");
 
     if (confirm("you lost. Press ok to restart.")) {
-      // window.location = "/client/public/Snake/index.html";
       window.parent.postMessage("game ended", "*");
-      // console.log(window.parent);
     }
     return;
   }

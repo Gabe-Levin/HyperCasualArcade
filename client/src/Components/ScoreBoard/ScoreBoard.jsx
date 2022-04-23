@@ -10,7 +10,7 @@ export default function HighScores({ scores }) {
   const showScores = scores.map((score) => {
     // console.log("highScores", scores);
     position++;
-    return <Score className="score" score={score} position={position} />;
+    return <Score key={position} score={score} position={position} />;
   });
 
   return <>High Scores {showScores}</>;

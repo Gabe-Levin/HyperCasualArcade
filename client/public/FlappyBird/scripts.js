@@ -50,6 +50,7 @@ function handleStart() {
 }
 
 function handleLose() {
+  window.parent.postMessage(`finalScore : ${getPassedPipesCount()} `, "*");
   setTimeout(() => {
     title.classList.remove("hide");
     subtitle.classList.remove("hide");

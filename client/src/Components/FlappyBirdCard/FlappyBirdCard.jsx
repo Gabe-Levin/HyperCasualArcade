@@ -7,32 +7,31 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function SnakeCard({ setGameSelector, setHighScores }) {
   function handleMainClick(text) {
-    setHighScores(JSON.parse(localStorage.getItem("snakeScores")));
-
+    setHighScores(JSON.parse(localStorage.getItem("flappyBirdScores")));
     setGameSelector(text);
   }
   return (
     <Card sx={{ maxWidth: 250 }}>
-      <CardActionArea onClick={() => handleMainClick("snake")}>
+      <CardActionArea onClick={() => handleMainClick("flappyBird")}>
         <CardMedia
           component="img"
           height="140"
-          image="./imgs/SnakeScreenShot.png"
+          image="./imgs/FlappyBirdScreenShot.png"
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Snake
+            Flappy Bird
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Snake daddy's got to eat. But watch your tail and don't hit the
-            edges.
+            Flying to your hearts desire, just don't hit the pipes...no pun
+            intended
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button
-          onClick={() => handleMainClick("snakeScores")}
+          onClick={() => handleMainClick("flappyBirdScores")}
           size="small"
           color="primary"
         >

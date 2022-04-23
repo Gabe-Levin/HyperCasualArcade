@@ -5,9 +5,9 @@ import { sortScores } from "../../utils/sort";
 
 export default function Snake({ setHighScores }) {
   const [src, setSrc] = useState("Snake/index.html");
-  const [scores, setScores] = useState(
-    JSON.parse(localStorage.getItem("snakeScores")) || []
-  );
+  // const [scores, setScores] = useState(
+  //   JSON.parse(localStorage.getItem("snakeScores")) || []
+  // );
 
   const getRandomStr = () => Math.random();
   let newScores;
@@ -30,7 +30,7 @@ export default function Snake({ setHighScores }) {
           localStorage.setItem("snakeScores", JSON.stringify(newScores));
           savedScores = JSON.parse(localStorage.getItem("snakeScores"));
           console.log("I'm SavedScores____", savedScores);
-          setScores(savedScores);
+          // setScores(savedScores);
           setHighScores(savedScores.slice(0, 10));
         }
       }
