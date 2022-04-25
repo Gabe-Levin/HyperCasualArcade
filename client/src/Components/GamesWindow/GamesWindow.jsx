@@ -27,15 +27,15 @@ export default function GamesWindow({
     }
     if (gameSelector === "snakeScores") {
       if (highScores === []) setHighScores(localScores);
-      return <HighScores scores={highScores} />;
+      return <HighScores highScores={highScores} />;
     }
     if (gameSelector === "flappyBirdScores") {
       if (highScores === []) setHighScores(localScores);
-      return <HighScores scores={highScores} />;
+      return <HighScores highScores={highScores} />;
     }
     if (gameSelector === "pongScores") {
       if (highScores === []) setHighScores(localScores);
-      return <HighScores scores={highScores} />;
+      return <HighScores highScores={highScores} />;
     }
   }
 

@@ -85,7 +85,6 @@ function handleLose() {
 }
 
 function handleGameOver() {
-  console.log("HANDLEING GAME OVER!!!");
   window.parent.postMessage(`finalScore : ${getFinalScores()} `, "*");
   setTimeout(() => {
     title.classList.remove("hide");

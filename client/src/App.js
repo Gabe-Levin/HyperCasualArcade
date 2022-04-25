@@ -5,7 +5,7 @@ import Header from "./Components/Header/Header";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [gameSelector, setGameSelector] = useState("flappyBird");
+  const [gameSelector, setGameSelector] = useState("snake");
   const [highScores, setHighScores] = useState([]);
 
   useEffect(() => {

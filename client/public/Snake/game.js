@@ -14,7 +14,10 @@ import { update as updateFood, draw as drawFood } from "./food.js";
 let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById("game-board");
+const title = document.querySelector("[data-title]");
+const subtitle = document.querySelector("[data-subtitle]");
 // let username = "";
+// document.addEventListener("keypress", handleStart, { once: true });
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.code === "Space") {
@@ -23,17 +26,8 @@ document.addEventListener("keydown", function (e) {
 });
 
 function main(currentTime) {
-  // if (username === "") {
-  //   username = prompt("Enter your username");
-  // }
-  if (gameOver) {
-    window.parent.postMessage(`finalScore : ${getFinalScore()} `, "*");
+  if (gameOver) return handleGameOver();
 
-    if (confirm("you lost. Press ok to restart.")) {
-      window.parent.postMessage("game ended", "*");
-    }
-    return;
-  }
   window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
@@ -44,6 +38,26 @@ function main(currentTime) {
 }
 
 window.requestAnimationFrame(main);
+
+function handleGameOver() {
+  window.parent.postMessage(`finalScore : ${getFinalScore()} `, "*");
+  setTimeout(() => {
+    title.classList.remove("hide");
+    subtitle.classList.remove("hide");
+    subtitle.textContent = `${getFinalScore()} Goals`;
+
+    document.addEventListener(
+      "keypress",
+      function (e) {
+        console.log("we in here");
+        if (e.key === "Enter") {
+          window.location.reload();
+        }
+      },
+      { once: true }
+    );
+  }, 200);
+}
 
 function update() {
   updateSnake();
