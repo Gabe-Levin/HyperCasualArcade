@@ -21,7 +21,7 @@ function App() {
   });
 
   return (
-    <div>
+    <div className="App">
       <Header />
       <GamesWindow
         gameSelector={gameSelector}

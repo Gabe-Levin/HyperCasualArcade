@@ -6,51 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake</title>
     <script src="game.js" defer type="module"></script>
-    <style>
-      body {
-        min-height: 100vh;
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        background-color: black;
-      }
-      #game-board {
-        background-color: #ccc;
-        width: 100vmin;
-        height: 100vmin;
-        display: grid;
-        grid-template-rows: repeat(42, 1fr);
-        grid-template-columns: repeat(42, 1fr);
-      }
-
-      .snake {
-        background-color: hsl(200, 100%, 50%);
-        border: 0.25vmin solid black;
-      }
-      .food {
-        background-color: hsl(50, 100%, 50%);
-        border: 0.25vmin solid black;
-      }
-      .title {
-        z-index: 10;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        inset: 0;
-        margin: 0;
-        flex-direction: column;
-      }
-      .hide {
-        display: none;
-      }
-
-      .subtitle {
-        margin-top: 0.5rem;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="gameWindow">

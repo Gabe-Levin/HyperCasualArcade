@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import "./GameCard.css";
 
 export default function SnakeCard({ setGameSelector, setHighScores, card }) {
   function handleMainClick(text) {
@@ -11,7 +12,7 @@ export default function SnakeCard({ setGameSelector, setHighScores, card }) {
     setGameSelector(text);
   }
   return (
-    <Card sx={{ maxWidth: 200 }}>
+    <Card className="Cards">
       <CardActionArea onClick={() => handleMainClick(card.game)}>
         <CardMedia
           component="img"
@@ -20,7 +21,12 @@ export default function SnakeCard({ setGameSelector, setHighScores, card }) {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            className="Cards"
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
             {card.gameTitle}
           </Typography>
           <Typography variant="body2" color="text.secondary">
