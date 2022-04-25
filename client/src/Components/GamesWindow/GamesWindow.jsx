@@ -37,6 +37,13 @@ export default function GamesWindow({
       if (highScores === []) setHighScores(localScores);
       return <HighScores highScores={highScores} />;
     }
+    if (gameSelector === "loadingGif") {
+      return (
+        <div className="container">
+          <h2 className="item">Select a Game!!</h2>
+        </div>
+      );
+    }
   }
 
   return (

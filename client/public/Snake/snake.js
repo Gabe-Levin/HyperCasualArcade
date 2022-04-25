@@ -44,8 +44,8 @@ export function snakeIntersection() {
   return onSnake(snakeBody[0], { ignoreHead: true });
 }
 
-export function getFinalScore() {
-  return snakeBody.length;
+export function getScore() {
+  return snakeBody.length - 1;
 }
 
 function equalPositions(pos1, pos2) {

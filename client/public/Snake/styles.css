@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 *{
-  font-family: 'VT323', monospace;
+    font-family: 'VT323', monospace;
+    /* color: rgb(0, 0, 0); */
 }
 
 body {
@@ -23,12 +24,13 @@ body {
 }
 
 .snake {
-  background-color: hsl(200, 100%, 50%);
+  background-color: hsl(122, 67%, 46%);
   border: 0.25vmin solid black;
 }
 .food {
-  background-color: hsl(50, 100%, 50%);
+  background-color: hsl(0, 100%, 50%);
   border: 0.25vmin solid black;
+  border-radius: 50%;
 }
 .title {
   z-index: 10;
@@ -46,4 +48,23 @@ body {
 
 .subtitle {
   margin-top: 0.5rem;
+}
+
+.gameWindow{
+  display: flex;
+}
+
+.scoreBoard{
+  position: fixed;
+  /* top: 50%; */
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+}
+
+.introScreen{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
 }

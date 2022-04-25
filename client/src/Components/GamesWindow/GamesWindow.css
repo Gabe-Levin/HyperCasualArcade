@@ -14,6 +14,26 @@
   justify-content: center;
 }
 
+.container {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-image: url("../../../public/imgs/pixel\ city\ background.gif");
+  background-size: cover;
+  height: 100%;
+  border: solid 2px gray;
+}
+
+.item {
+  width: 10em;
+  text-align: center;
+  align-self: center;
+}
+  
+
 .meteor {
   /* top: 27.55vh; */
   /* right: 17.22vw;

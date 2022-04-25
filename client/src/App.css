@@ -3,4 +3,8 @@
 .App {
 
   font-family: 'VT323', monospace;
+  color: white;
+  background-color: black;
+  background-image: url("../public/imgs/BackgroundStars.gif");
+  min-height: 100vh;
 }

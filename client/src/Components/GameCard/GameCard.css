@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 .Cards {
-  max-width: 200;
+  max-width: 200px;
+  /* max-height: 300px; */
   font-family: 'VT323', monospace !important; 
 }
 
-.Cards *{
-  font-family: 'VT323', monospace !important; 
 
-}
 
 /* sx={{ maxWidth: 200 }} */

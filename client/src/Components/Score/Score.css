@@ -6,6 +6,7 @@
 .position{
   color:white;
   margin-left: 25px;
+  min-width: 25px;
 }
 
 .scoreContainer{

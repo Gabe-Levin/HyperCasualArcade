@@ -3,3 +3,8 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+h2 {
+  margin-left:16px;
+
+}
