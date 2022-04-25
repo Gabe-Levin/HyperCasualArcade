@@ -27,12 +27,12 @@ const cardInfo = [
       "Flying to your hearts desire, just don't hit the pipes...no pun intended.",
   },
 ];
-export default function GamesDashboard({ setGameSelector, setHighScores }) {
+export default function GamesDashboard({ setWindowSelector, setHighScores }) {
   const gameCards = cardInfo.map((card) => {
     return (
       <GameCard
         key={card.game}
-        setGameSelector={setGameSelector}
+        setWindowSelector={setWindowSelector}
         setHighScores={setHighScores}
         card={card}
       />

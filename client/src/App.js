@@ -5,7 +5,7 @@ import Header from "./Components/Header/Header";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [gameSelector, setGameSelector] = useState("loadingGif");
+  const [windowSelector, setWindowSelector] = useState("loadingGif");
   const [highScores, setHighScores] = useState([]);
 
   useEffect(() => {
@@ -24,12 +24,12 @@ function App() {
     <div className="App">
       <Header />
       <GamesWindow
-        gameSelector={gameSelector}
+        windowSelector={windowSelector}
         highScores={highScores}
         setHighScores={setHighScores}
       />
       <GamesDashboard
-        setGameSelector={setGameSelector}
+        setWindowSelector={setWindowSelector}
         setHighScores={setHighScores}
       />
     </div>

@@ -6,10 +6,11 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import "./GameCard.css";
 
-export default function SnakeCard({ setGameSelector, setHighScores, card }) {
+export default function GameCard({ setWindowSelector, setHighScores, card }) {
   function handleMainClick(text) {
+    console.log("gameCard", setWindowSelector);
     setHighScores(JSON.parse(localStorage.getItem(card.scorePath)));
-    setGameSelector(text);
+    setWindowSelector(text);
   }
   return (
     <Card className="Cards">

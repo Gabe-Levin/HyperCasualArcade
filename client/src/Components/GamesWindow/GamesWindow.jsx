@@ -1,43 +1,66 @@
 import React, { useEffect, useState } from "react";
 import HighScores from "../ScoreBoard/ScoreBoard";
-import Pong from "../Pong/Pong";
-import Snake from "../Snake/Snake";
 import "./GamesWindow.css";
-import FlappyBird from "../FlappyBird/FlappyBird";
+import Game from "../Game/Game";
+
+const gameInfoTable = {
+  pong: {
+    storageName: "pongScores",
+    sourceName: "Pong/index.html",
+    // iframeID: "pongFrame",
+  },
+  snake: {
+    storageName: "snakeScores",
+    sourceName: "Snake/index.html",
+  },
+  flappyBird: {
+    storageName: "flappyBirdScores",
+    sourceName: "FlappyBird/index.html",
+  },
+};
 
 export default function GamesWindow({
-  gameSelector,
+  windowSelector,
   highScores,
   setHighScores,
 }) {
-  let localScores = JSON.parse(localStorage.getItem(gameSelector))
-    ? JSON.parse(localStorage.getItem(gameSelector)).slice(0, 10)
+  let localScores = JSON.parse(localStorage.getItem(windowSelector))
+    ? JSON.parse(localStorage.getItem(windowSelector)).slice(0, 10)
     : [];
 
-  function gameWindowSwitcher(gameSelector) {
-    console.log("gameSelector", gameSelector);
-    if (gameSelector === "snake") {
-      return <Snake setHighScores={setHighScores} />;
+  function gameWindowSwitcher(windowSelector) {
+    console.log("windowSelector", windowSelector);
+    if (windowSelector === "snake") {
+      return (
+        <Game setHighScores={setHighScores} gameInfo={gameInfoTable.snake} />
+      );
     }
-    if (gameSelector === "pong") {
-      return <Pong setHighScores={setHighScores} />;
+    if (windowSelector === "pong") {
+      return (
+        <Game setHighScores={setHighScores} gameInfo={gameInfoTable.pong} />
+      );
     }
-    if (gameSelector === "flappyBird") {
-      return <FlappyBird setHighScores={setHighScores} />;
+    if (windowSelector === "flappyBird") {
+      return (
+        <Game
+          setHighScores={setHighScores}
+          gameInfo={gameInfoTable.flappyBird}
+        />
+      );
     }
-    if (gameSelector === "snakeScores") {
+    if (windowSelector === "snakeScores") {
       if (highScores === []) setHighScores(localScores);
       return <HighScores highScores={highScores} />;
     }
-    if (gameSelector === "flappyBirdScores") {
+    if (windowSelector === "flappyBirdScores") {
       if (highScores === []) setHighScores(localScores);
       return <HighScores highScores={highScores} />;
     }
-    if (gameSelector === "pongScores") {
+    if (windowSelector === "pongScores") {
       if (highScores === []) setHighScores(localScores);
       return <HighScores highScores={highScores} />;
     }
-    if (gameSelector === "loadingGif") {
+    if (windowSelector === "loadingGif") {
       return (
         <div className="container">
           <h2 className="item">Select a Game!!</h2>
@@ -53,7 +76,7 @@ export default function GamesWindow({
         alt="Bomberman"
         className="meteor hide"
       ></img>
-      <div id="gameWindow">{gameWindowSwitcher(gameSelector)}</div>
+      <div id="gameWindow">{gameWindowSwitcher(windowSelector)}</div>
     </div>
   );
 }

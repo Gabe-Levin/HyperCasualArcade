@@ -14,7 +14,8 @@ import { update as updateFood, draw as drawFood } from "./food.js";
 let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById("game-board");
-const gameWindow = document.getElementById("game-window");
+// const gameWindow = document.getElementById("game-window");
+const introTitle = document.querySelector("[introText]");
 const title = document.querySelector("[data-title]");
 const subtitle = document.querySelector("[data-subtitle]");
 const scoreElement = document.getElementById("scoreBoard");
@@ -25,6 +26,7 @@ const scoreElement = document.getElementById("scoreBoard");
 document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.code === "Space") {
     e.preventDefault();
+    introTitle.classList.add("hide");
   }
   if (e.key === "Enter") {
     window.requestAnimationFrame(main);
@@ -50,7 +52,7 @@ function handleGameOver() {
   setTimeout(() => {
     title.classList.remove("hide");
     subtitle.classList.remove("hide");
-    subtitle.textContent = `${getScore()} Goals`;
+    subtitle.textContent = `Score: ${getScore()} `;
 
     document.addEventListener(
       "keypress",
@@ -81,16 +83,6 @@ function draw() {
 function checkDeath() {
   gameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
 }
-
-// function drawScore() {
-//   const scoreElement = document.createElement("div");
-//   scoreElement.style.gridRowStart = 2;
-//   scoreElement.style.gridColumnStart = 22;
-//   scoreElement.classList.add("scoreBoard");
-//   scoreElement.innerHTML = getScore();
-//   console.log(gameWindow);
-//   gameWindow.appendChild(scoreElement);
-// }
 
 function updateScore() {
   scoreElement.innerHTML = getScore();
