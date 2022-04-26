@@ -1,4 +1,29 @@
 #gameFrame{
   height: 100%;
   width: 100%;
+  /* transform: scale(2);
+  object-fit:contain;
+  aspect-ratio: 1; */
+} 
+
+.GameFlexContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* align-content: flex-end;   */
+  align-items: flex-end;
 }
+
+
+.iFrameDivContainer {
+  position: relative;
+   padding-bottom: 56.25%;
+
+}
+/* iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+} */

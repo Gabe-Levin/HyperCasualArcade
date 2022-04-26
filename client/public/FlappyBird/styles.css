@@ -11,7 +11,19 @@ body{
   background-image: url("../imgs/FlappyBirdBackground.png");
   height: 400px;
   width: 550px;
-  background-size: cover;
+  /* height: 100vmin;
+  width: 100vmin; */
+  /* padding:56.25%; */
+  /* background-size: ; */
+}
+
+.gameContainer{
+  /* height: 100vmin;
+  width: 100vmin; */
+  height: 400px;
+  width: 550px;
+  /* padding:56.25%; */
+  aspect-ratio:1/1;
 }
 
 .title {
@@ -33,7 +45,7 @@ body{
   display: none;
 }
 .bird{
-  --bird-size: 30px;
+  --bird-size: 6vh;
   --bird-top:-1000;
   position: absolute;
   /* background-color: hsl(50,75%, 50%); */
@@ -46,26 +58,25 @@ body{
 }
 
 .pipe{
-
   position: absolute;
   top: 0;
   bottom: 0;
-  width: calc(var(--pipe-width)*1px);
+  width: calc(var(--pipe-width)*.2vw);
   left: calc(var(--pipe-left)*1px);
 }
 
 .pipe > .segment{
-  position: absolute;
+  /* position: absolute; */
   width:100%;
   background-color: hsl(100,75%, 50%);
 }
 
 .pipe > .top {
   top:0;
-  bottom: calc(var(--hole-top)*1px);
+  bottom: calc(var(--hole-top)*.2vh);
 }
 
 .pipe > .bottom {
-  top: calc(100vh - (var(--hole-top)*1px) + calc(var(--hole-height)*1px));
+  top: calc(100vh - (var(--hole-top)*.15vh) + calc(var(--hole-height)*.15vh));
   bottom:0;
 }

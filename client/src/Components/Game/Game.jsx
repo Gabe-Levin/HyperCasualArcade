@@ -1,6 +1,7 @@
 import "./Game.css";
 import { useEffect, useState } from "react";
 import { sortScores } from "../../utils/sort";
+import "./Button.css";
 
 export default function Pong({ setHighScores, gameInfo }) {
   const [src, setSrc] = useState(gameInfo.sourceName);
@@ -14,8 +15,8 @@ export default function Pong({ setHighScores, gameInfo }) {
       let msgStr = e.data;
       let randomStr = getRandomStr();
       if (typeof msgStr === "string") {
-        if (msgStr === "game ended")
-          setSrc(gameInfo.sourceName + "?" + randomStr);
+        // if (msgStr === "game ended")
+        //   setSrc(gameInfo.sourceName + "?" + randomStr);
         if (msgStr.startsWith("finalScore")) {
           let finalScore = msgStr.substring(12, msgStr.length - 1);
           let oldScores = JSON.parse(
@@ -32,10 +33,41 @@ export default function Pong({ setHighScores, gameInfo }) {
         }
       }
     };
-
     const id = window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
-  return <iframe id="gameFrame" src={gameInfo.sourceName} />;
+  //Focuses the iframe so people can start playing right away
+  useEffect(() => {
+    document.querySelector("iframe").focus();
+  }, [gameInfo]);
+
+  // onClick={toggleFullScreen()}
+  return (
+    <>
+      {/* <div className="iFrameDivContainer"> */}
+      <iframe
+        id="gameFrame"
+        frameBorder="0"
+        src={gameInfo.sourceName}
+        allowFullScreen={true}
+      />
+      {/* </div> */}
+
+      <div className="GameFlexContainer">
+        <button
+          className="eightbit-btn-fullscreen eightbit-btn--proceed "
+          onClick={toggleFullScreen}
+        >
+          Full Screen
+        </button>
+      </div>
+    </>
+  );
 }
+
+const toggleFullScreen = () => {
+  // document.querySelector(".iFrameDivContainer").requestFullscreen();
+  document.querySelector("iframe").requestFullscreen();
+  // document.documentElement.requestFullscreen();
+};

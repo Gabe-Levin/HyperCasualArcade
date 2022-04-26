@@ -2,7 +2,7 @@
 
 .App {
 
-  font-family: 'VT323', monospace;
+  font-family: 'VT323', monospace ;
   color: white;
   background-color: black;
   background-image: url("../public/imgs/BackgroundStars.gif");
@@ -12,4 +12,5 @@
 .ContentBody{
   min-height: 800px;
   height: 90vh;
+  /* height: 100%; */
 }

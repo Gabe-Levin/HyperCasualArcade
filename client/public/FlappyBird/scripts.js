@@ -33,7 +33,9 @@ function updateLoop(time) {
 function checkLose() {
   const birdRect = getBirdRect();
   const insidePipe = getPipeRects().some((rect) => isCollision(birdRect, rect));
-  const outsideWorld = birdRect.top < 0 || birdRect.bottom > window.innerHeight;
+  const isBirdOffTop = birdRect.top < 0;
+  const isBirdOffBottom = birdRect.bottom > window.innerHeight;
+  const outsideWorld = isBirdOffTop || isBirdOffBottom;
   return outsideWorld || insidePipe;
 }
 

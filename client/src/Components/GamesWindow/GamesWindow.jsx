@@ -7,7 +7,6 @@ const gameInfoTable = {
   pong: {
     storageName: "pongScores",
     sourceName: "Pong/index.html",
-    // iframeID: "pongFrame",
   },
   snake: {
     storageName: "snakeScores",
@@ -70,11 +69,11 @@ export default function GamesWindow({
 
   return (
     <div id="gameWindowContainer">
-      <img
+      {/* <img
         src="./imgs/backgroundAssets/meteor.gif"
         alt="Bomberman"
         className="meteor hide"
-      ></img>
+      ></img> */}
       <div id="gameWindow">{gameWindowSwitcher(windowSelector)}</div>
     </div>
   );

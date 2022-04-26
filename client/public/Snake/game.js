@@ -20,8 +20,8 @@ const title = document.querySelector("[data-title]");
 const subtitle = document.querySelector("[data-subtitle]");
 const scoreElement = document.getElementById("scoreBoard");
 
-// let username = "";
-// document.addEventListener("keypress", handleStart, { once: true });
+//Run on initial build
+window.requestAnimationFrame(main);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.code === "Space") {
@@ -32,8 +32,6 @@ document.addEventListener("keydown", function (e) {
     window.requestAnimationFrame(main);
   }
 });
-
-window.requestAnimationFrame(main);
 
 function main(currentTime) {
   if (gameOver) return handleGameOver();

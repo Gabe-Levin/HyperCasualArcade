@@ -1,7 +1,6 @@
 import React from "react";
 import "./GamesDashboard.css";
 import GameCard from "../GameCard/GameCard";
-import Footer from "../Footer/Footer";
 
 const cardInfo = [
   {
