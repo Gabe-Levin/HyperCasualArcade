@@ -11,20 +11,15 @@ body{
   background-image: url("../imgs/FlappyBirdBackground.png");
   height: 400px;
   width: 550px;
-  /* height: 100vmin;
-  width: 100vmin; */
-  /* padding:56.25%; */
-  /* background-size: ; */
+  background-size:cover;
 }
 
 .gameContainer{
-  /* height: 100vmin;
-  width: 100vmin; */
-  height: 400px;
-  width: 550px;
-  /* padding:56.25%; */
-  aspect-ratio:1/1;
+  height:100vmin;
+  width:100vmin;
 }
+
+
 
 .title {
   z-index: 10;
@@ -61,22 +56,29 @@ body{
   position: absolute;
   top: 0;
   bottom: 0;
-  width: calc(var(--pipe-width)*.2vw);
+  width: calc(var(--pipe-width)*.2%);
   left: calc(var(--pipe-left)*1px);
+  /* border: 1px solid black */
 }
 
 .pipe > .segment{
-  /* position: absolute; */
+  position: absolute;
   width:100%;
   background-color: hsl(100,75%, 50%);
 }
 
 .pipe > .top {
   top:0;
-  bottom: calc(var(--hole-top)*.2vh);
+  bottom: calc(var(--hole-top)*.2%);
 }
 
 .pipe > .bottom {
-  top: calc(100vh - (var(--hole-top)*.15vh) + calc(var(--hole-height)*.15vh));
+  top: calc(100vh - (var(--hole-top)*.15%) + calc(var(--hole-height)*.15%));
   bottom:0;
+}
+
+
+.score{
+  margin-left: 67%;
+  /* translate: 50%, 0%; */
 }

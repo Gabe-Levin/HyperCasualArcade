@@ -14,6 +14,7 @@ document.addEventListener("keydown", function (e) {
 document.addEventListener("keypress", handleStart, { once: true });
 const title = document.querySelector("[data-title]");
 const subtitle = document.querySelector("[data-subtitle]");
+const scoreBoard = document.querySelector(".score");
 
 let lastTime;
 function updateLoop(time) {
@@ -22,6 +23,9 @@ function updateLoop(time) {
     window.requestAnimationFrame(updateLoop);
     return;
   }
+  //update score
+  scoreBoard.innerHTML = getPassedPipesCount();
+
   const delta = time - lastTime;
   updateBird(delta);
   updatePipes(delta);

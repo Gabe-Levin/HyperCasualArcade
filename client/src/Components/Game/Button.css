@@ -3,6 +3,10 @@
   padding: 30px;
 } */
 
+.hide{
+  display: none;
+}
+
 .eightbit-btn-fullscreen {
   background: #92cd41;
   display: inline-block;

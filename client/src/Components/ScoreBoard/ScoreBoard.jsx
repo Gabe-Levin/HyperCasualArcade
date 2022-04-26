@@ -11,5 +11,10 @@ export default function HighScores({ highScores }) {
     return <Score key={position} score={score} position={position} />;
   });
 
-  return <>High Scores {showScores}</>;
+  return (
+    <div className="scoreBoardContainer">
+      <div className="scoreTitle">High Scores</div>
+      {showScores}
+    </div>
+  );
 }

@@ -40,9 +40,28 @@ export default function Pong({ setHighScores, gameInfo }) {
   //Focuses the iframe so people can start playing right away
   useEffect(() => {
     document.querySelector("iframe").focus();
+    if (gameInfo.storageName !== "flappyBirdScores") {
+      document.querySelector(".eightbit-btn-fullscreen").innerHTML =
+        "Full Screen";
+    }
+    return document
+      .querySelector(".GameFlexContainer")
+      .classList.remove("hide");
   }, [gameInfo]);
 
   // onClick={toggleFullScreen()}
+
+  const toggleFullScreen = () => {
+    if (gameInfo.storageName === "flappyBirdScores") {
+      console.log("hello");
+      document.querySelector(".eightbit-btn-fullscreen").innerHTML = ":(";
+    } else {
+      document.querySelector(".eightbit-btn-fullscreen").innerHTML =
+        "Full Screen";
+      document.querySelector("iframe").requestFullscreen();
+    }
+    // document.querySelector(".iFrameDivContainer").requestFullscreen();
+  };
   return (
     <>
       {/* <div className="iFrameDivContainer"> */}
@@ -65,9 +84,3 @@ export default function Pong({ setHighScores, gameInfo }) {
     </>
   );
 }
-
-const toggleFullScreen = () => {
-  // document.querySelector(".iFrameDivContainer").requestFullscreen();
-  document.querySelector("iframe").requestFullscreen();
-  // document.documentElement.requestFullscreen();
-};

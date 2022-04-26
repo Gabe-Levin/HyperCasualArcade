@@ -1,3 +1,10 @@
 .score{
   color:white;
 }
+
+.scoreBoardContainer{
+  /* background-color: aqua; */
+  height: 100%;
+  width: 100%;
+  background: url("../../../public/imgs/BackgroundStars.gif")
+}
