@@ -14,7 +14,7 @@ const cardInfo = [
     game: "snake",
     gameTitle: "Snake",
     scorePath: "snakeScores",
-    imageSrc: "./imgs/SnakeScreenShot.png",
+    imageSrc: "./imgs/SnakeScreenShot_2.png",
     gameDesc: " Snake daddy's got to eat. Watch your tail and the edges.",
   },
   {
