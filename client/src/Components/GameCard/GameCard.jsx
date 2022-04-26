@@ -10,7 +10,9 @@ import "./Button.css";
 
 export default function GameCard({ setWindowSelector, setHighScores, card }) {
   function handleViewSwitch(text) {
+    //Update scores state to selected game
     setHighScores(JSON.parse(localStorage.getItem(card.scorePath)));
+    //change the game window
     setWindowSelector(text);
   }
 

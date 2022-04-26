@@ -43,7 +43,6 @@ export default function GamesDashboard({ setWindowSelector, setHighScores }) {
       <h2>Game Catalog</h2>
 
       <div className="cardFlexContainer">{gameCards}</div>
-      <Footer />
     </>
   );
 }

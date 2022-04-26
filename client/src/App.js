@@ -3,6 +3,7 @@ import GamesDashboard from "./Components/GamesDashboard/GamesDashboard";
 import GamesWindow from "./Components/GamesWindow/GamesWindow";
 import Header from "./Components/Header/Header";
 import { useState, useEffect } from "react";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [windowSelector, setWindowSelector] = useState("loadingGif");
@@ -24,15 +25,18 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <GamesWindow
-        windowSelector={windowSelector}
-        highScores={highScores}
-        setHighScores={setHighScores}
-      />
-      <GamesDashboard
-        setWindowSelector={setWindowSelector}
-        setHighScores={setHighScores}
-      />
+      <div className="ContentBody">
+        <GamesWindow
+          windowSelector={windowSelector}
+          highScores={highScores}
+          setHighScores={setHighScores}
+        />
+        <GamesDashboard
+          setWindowSelector={setWindowSelector}
+          setHighScores={setHighScores}
+        />
+      </div>
+      <Footer />
     </div>
   );
 }

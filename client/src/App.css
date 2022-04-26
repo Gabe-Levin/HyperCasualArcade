@@ -8,3 +8,8 @@
   background-image: url("../public/imgs/BackgroundStars.gif");
   min-height: 100vh;
 }
+
+.ContentBody{
+  min-height: 800px;
+  height: 90vh;
+}
