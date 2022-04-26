@@ -1,0 +1,119 @@
+/* body {
+  text-align: center;
+  padding: 30px;
+} */
+
+.eightbit-btn {
+  background: #92cd41;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  font-family: "Press Start 2P", cursive;
+  text-decoration: none;
+  color: rgb(0, 0, 0) !important;
+  box-shadow: inset -4px -4px 0px 0px #4aa52e;
+  margin-bottom: 13px !important;
+  margin-left:7px !important;
+  /* margin-top: 15px !important; */
+
+}
+.eightbit-btn:hover, .eightbit-btn:focus {
+  background: #76c442;
+  box-shadow: inset -6px -6px 0px 0px #4aa52e;
+}
+.eightbit-btn:active {
+  box-shadow: inset 4px 4px 0px 0px #4aa52e;
+}
+.eightbit-btn:before, .eightbit-btn:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+.eightbit-btn:before {
+  top: -6px;
+  left: 0;
+  border-top: 6px black solid;
+  border-bottom: 6px black solid;
+}
+.eightbit-btn:after {
+  left: -6px;
+  top: 0;
+  border-left: 6px black solid;
+  border-right: 6px black solid;
+}
+.eightbit-btn--reset {
+  background: #e76e55;
+  box-shadow: inset -4px -4px 0px 0px #8c2022;
+}
+.eightbit-btn--reset:hover, .eightbit-btn--reset:focus {
+  background: #ce372b;
+  box-shadow: inset -6px -6px 0px 0px #8c2022;
+}
+.eightbit-btn--reset:active {
+  box-shadow: inset 4px 4px 0px 0px #8c2022;
+}
+.eightbit-btn--proceed {
+  background: #f7d51d;
+  box-shadow: inset -4px -4px 0px 0px #e59400;
+}
+.eightbit-btn--proceed:hover, .eightbit-btn--proceed:focus {
+  background: #f2c409;
+  box-shadow: inset -6px -6px 0px 0px #e59400;
+}
+.eightbit-btn--proceed:active {
+  box-shadow: inset 4px 4px 0px 0px #e59400;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* body {
+  font-family: sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: "Maven Pro", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 3.4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  font-family: "Press Start 2P", cursive;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+} */
+
+.hr {
+  margin: 10px auto;
+  
+  max-width: 100px;
+  display: block;
+  height: 35px;
+  border: 0;
+  /* border-top: 1px solid #ccc; */
+  padding: 25px;
+  align-items: center;
+}
+
+/* .pen-intro {
+  text-align: center;
+} */

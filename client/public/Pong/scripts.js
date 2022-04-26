@@ -65,8 +65,8 @@ function isLose() {
 
 function isGameOver() {
   if (
-    playerScoreElem.textContent === "7" ||
-    computerScoreElem.textContent === "7"
+    playerScoreElem.textContent === "5" ||
+    computerScoreElem.textContent === "5"
   ) {
     return true;
   }

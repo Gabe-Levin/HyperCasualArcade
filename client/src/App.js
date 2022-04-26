@@ -9,16 +9,12 @@ function App() {
   const [highScores, setHighScores] = useState([]);
 
   useEffect(() => {
-    document.addEventListener(
-      "keydown",
-      function (e) {
-        if (e.key === "ArrowUp" || e.key === "ArrowDown") {
-          e.preventDefault();
-        }
-      },
-      []
-    );
-  });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+        e.preventDefault();
+      }
+    });
+  }, []);
 
   return (
     <div className="App">

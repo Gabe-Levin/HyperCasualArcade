@@ -45,7 +45,7 @@ body{
   top: calc(var(--position)*1vh);
   transform: translateY(-50%);
   width: 1vh;
-  height: 10vh;
+  height: 13vh;
 }
 
 .hide{

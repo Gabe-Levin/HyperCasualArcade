@@ -9,7 +9,7 @@ const cardInfo = [
     gameTitle: "Pong",
     scorePath: "pongScores",
     imageSrc: "./imgs/PongScreenShot.png",
-    gameDesc: "Disco Pong for the Geezers. First one to 7 wins!",
+    gameDesc: "Disco Pong for the Geezers. First one to 5 wins!",
   },
   {
     game: "snake",

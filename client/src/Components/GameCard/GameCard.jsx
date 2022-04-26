@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import styled from "@emotion/styled";
 import "./GameCard.css";
+import "./Button.css";
 
 export default function GameCard({ setWindowSelector, setHighScores, card }) {
   function handleMainClick(text) {
@@ -43,12 +44,13 @@ export default function GameCard({ setWindowSelector, setHighScores, card }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions sx={{ textAlign: "center" }} padding="0">
+      <CardActions className="hr" sx={{ textAlign: "center" }} padding="0">
         <Button
+          className="eightbit-btn eightbit-btn--reset"
           onClick={() => handleMainClick(card.scorePath)}
           size="small"
           color="primary"
-          padding="0"
+          padding="10px"
         >
           High Scores
         </Button>
