@@ -1,6 +1,7 @@
 import React from "react";
 import "./GamesDashboard.css";
 import GameCard from "../GameCard/GameCard";
+import Footer from "../Footer/Footer";
 
 const cardInfo = [
   {
@@ -15,16 +16,14 @@ const cardInfo = [
     gameTitle: "Snake",
     scorePath: "snakeScores",
     imageSrc: "./imgs/SnakeScreenShot.png",
-    gameDesc:
-      " Snake daddy's got to eat. But watch your tail and don't hit the edges.",
+    gameDesc: " Snake daddy's got to eat. Watch your tail and the edges.",
   },
   {
     game: "flappyBird",
     gameTitle: "Flappy Bird",
     scorePath: "flappyBirdScores",
     imageSrc: "./imgs/FlappyBirdScreenShot.png",
-    gameDesc:
-      "Flying to your hearts desire, just don't hit the pipes...no pun intended.",
+    gameDesc: "Flying to your hearts desire, just don't hit the pipes...",
   },
 ];
 export default function GamesDashboard({ setWindowSelector, setHighScores }) {
@@ -44,6 +43,7 @@ export default function GamesDashboard({ setWindowSelector, setHighScores }) {
       <h2>Game Catalog</h2>
 
       <div className="cardFlexContainer">{gameCards}</div>
+      <Footer />
     </>
   );
 }

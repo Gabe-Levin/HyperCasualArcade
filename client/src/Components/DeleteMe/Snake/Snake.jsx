@@ -1,7 +1,7 @@
 import React from "react";
 import "./Snake.css";
 import { useEffect, useState } from "react";
-import { sortScores } from "../../utils/sort";
+import { sortScores } from "../../../utils/sort";
 
 export default function Snake({ setHighScores }) {
   const [src, setSrc] = useState("Snake/index.html");

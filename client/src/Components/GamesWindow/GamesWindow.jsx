@@ -29,7 +29,6 @@ export default function GamesWindow({
     : [];
 
   function gameWindowSwitcher(windowSelector) {
-    console.log("windowSelector", windowSelector);
     if (windowSelector === "snake") {
       return (
         <Game setHighScores={setHighScores} gameInfo={gameInfoTable.snake} />

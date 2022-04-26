@@ -4,22 +4,23 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import styled from "@emotion/styled";
 import "./GameCard.css";
 
 export default function GameCard({ setWindowSelector, setHighScores, card }) {
   function handleMainClick(text) {
-    console.log("gameCard", setWindowSelector);
     setHighScores(JSON.parse(localStorage.getItem(card.scorePath)));
     setWindowSelector(text);
   }
+
   return (
-    <Card className="Cards">
+    <Card className="Cards" sx={{ border: 0, borderColor: "secondary.main" }}>
       <CardActionArea onClick={() => handleMainClick(card.game)}>
         <CardMedia
           component="img"
           height="140"
           image={card.imageSrc}
-          alt="green iguana"
+          alt={card.gameTitle}
         />
         <CardContent>
           <Typography
@@ -27,19 +28,27 @@ export default function GameCard({ setWindowSelector, setHighScores, card }) {
             gutterBottom
             variant="h5"
             component="div"
+            margin="0"
+            padding="0"
           >
             {card.gameTitle}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            padding="0"
+            margin="0"
+            color="text.secondary"
+          >
             {card.gameDesc}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions sx={{ textAlign: "center" }} padding="0">
         <Button
           onClick={() => handleMainClick(card.scorePath)}
           size="small"
           color="primary"
+          padding="0"
         >
           High Scores
         </Button>
@@ -47,3 +56,7 @@ export default function GameCard({ setWindowSelector, setHighScores, card }) {
     </Card>
   );
 }
+
+const SpecialHeader = styled.h1`
+  font-size: 5rem;
+`;

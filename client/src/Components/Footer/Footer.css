@@ -1,0 +1,5 @@
+.Footer{
+  display: flex;
+  height: 10vh;
+  align-content: right;
+}

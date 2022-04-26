@@ -1,6 +1,6 @@
 import "./Pong.css";
 import { useEffect, useState } from "react";
-import { sortScores } from "../../utils/sort";
+import { sortScores } from "../../../utils/sort";
 
 export default function Pong({ setHighScores }) {
   const [src, setSrc] = useState("Pong/index.html");
