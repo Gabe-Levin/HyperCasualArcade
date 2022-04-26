@@ -14,6 +14,11 @@ function App() {
         e.preventDefault();
       }
     });
+    return document.removeEventListener("keydown", function (e) {
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+        e.preventDefault();
+      }
+    });
   }, []);
 
   return (

@@ -9,14 +9,14 @@ import "./GameCard.css";
 import "./Button.css";
 
 export default function GameCard({ setWindowSelector, setHighScores, card }) {
-  function handleMainClick(text) {
+  function handleViewSwitch(text) {
     setHighScores(JSON.parse(localStorage.getItem(card.scorePath)));
     setWindowSelector(text);
   }
 
   return (
     <Card className="Cards" sx={{ border: 0, borderColor: "secondary.main" }}>
-      <CardActionArea onClick={() => handleMainClick(card.game)}>
+      <CardActionArea onClick={() => handleViewSwitch(card.game)}>
         <CardMedia
           component="img"
           height="140"
@@ -47,7 +47,7 @@ export default function GameCard({ setWindowSelector, setHighScores, card }) {
       <CardActions className="hr" sx={{ textAlign: "center" }} padding="0">
         <Button
           className="eightbit-btn eightbit-btn--reset"
-          onClick={() => handleMainClick(card.scorePath)}
+          onClick={() => handleViewSwitch(card.scorePath)}
           size="small"
           color="primary"
           padding="10px"
