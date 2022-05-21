@@ -1,5 +1,6 @@
 # Hyper Casual Arcade
-This online arcade was created as a testing playground for different 
+This online arcade was created as a testing playground for using vanilla javascript to code arcade games from scratch. At the moment the games included are pong, snake, and flappy bird. The fontend interface was developed using React. Try to get a high score and have fun! :snake:
+
 <p align="center">
   <img src="client/public/imgs/readme/20220521_Screenshots.png" />
 </p>
