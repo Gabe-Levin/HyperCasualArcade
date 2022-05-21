@@ -1,8 +1,9 @@
 # Hyper Casual Arcade
 This online arcade was created as a testing playground for different 
 <p align="center">
-  <img src="/client/public/imgs/readme/20220521_Screenshots.png" />
+  <img src="client/public/imgs/readme/20220521_Screenshots.png" />
 </p>
+![20220521_Screenshots.pdf](https://github.com/Gabe-Levin/HyperCasualArcade/files/8748129/20220521_Screenshots.pdf)
 
 # Setup
 To run this arcade locally simply clone the repo and run the follow
