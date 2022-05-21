@@ -13,10 +13,9 @@ export default function Pong({ setHighScores, gameInfo }) {
   useEffect(() => {
     const handleMessage = function (e) {
       let msgStr = e.data;
+      console.log(msgStr)
       let randomStr = getRandomStr();
       if (typeof msgStr === "string") {
-        // if (msgStr === "game ended")
-        //   setSrc(gameInfo.sourceName + "?" + randomStr);
         if (msgStr.startsWith("finalScore")) {
           let finalScore = msgStr.substring(12, msgStr.length - 1);
           let oldScores = JSON.parse(
@@ -33,7 +32,7 @@ export default function Pong({ setHighScores, gameInfo }) {
         }
       }
     };
-    const id = window.addEventListener("message", handleMessage);
+    window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
