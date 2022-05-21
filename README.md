@@ -1,7 +1,7 @@
 # Hyper Casual Arcade
 This online arcade was created as a testing playground for different 
 
-[20220521_Screenshots.pptx](https://github.com/Gabe-Levin/HyperCasualArcade/files/8748128/20220521_Screenshots.pptx)
+[20220521_Screenshots.pdf](https://github.com/Gabe-Levin/HyperCasualArcade/files/8748129/20220521_Screenshots.pdf)
 
 # Setup
 To run this arcade locally simply clone the repo and run the follow
