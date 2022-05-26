@@ -25,7 +25,7 @@ const cardInfo = [
     gameDesc: "Flying to your hearts desire, just don't hit the pipes...",
   },
 ];
-export default function GamesDashboard({ setWindowSelector, setHighScores }) {
+export default function GamesDashboard({ setWindowSelector, setHighScores } : {setWindowSelector: React.Dispatch<React.SetStateAction<string>>, setHighScores: React.Dispatch<React.SetStateAction<number[]>>}) {
   const gameCards = cardInfo.map((card) => {
     return (
       <GameCard

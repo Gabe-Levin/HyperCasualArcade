@@ -23,7 +23,6 @@ document.addEventListener("keydown", function (e) {
 document.addEventListener(
   "keypress",
   function (e) {
-    console.log("we in here");
     if (e.key === "Enter") {
       handleStart();
     }
@@ -90,12 +89,10 @@ function handleGameOver() {
     title.classList.remove("hide");
     subtitle.classList.remove("hide");
     subtitle.textContent = `${getFinalScores()} Goals`;
-    // document.addEventListener("keypress", handleStart, { once: true });
 
     document.addEventListener(
       "keypress",
       function (e) {
-        console.log("we in here");
         if (e.key === "Enter") {
           handleStart();
         }
@@ -136,4 +133,3 @@ document.body.onkeyup = function (e) {
   }
 };
 
-// window.requestAnimationFrame(update);

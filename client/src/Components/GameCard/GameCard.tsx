@@ -7,11 +7,19 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import styled from "@emotion/styled";
 import "./GameCard.css";
 import "./Button.css";
+import { ICard } from "../../interfaces/card.interfaces";
 
-export default function GameCard({ setWindowSelector, setHighScores, card }) {
-  function handleViewSwitch(text) {
+interface GameCardProps {
+  setWindowSelector: React.Dispatch<React.SetStateAction<string>>, 
+  setHighScores: React.Dispatch<React.SetStateAction<number[]>>, 
+  card: ICard
+}
+
+export default function GameCard({ setWindowSelector, setHighScores, card }: GameCardProps) {
+  function handleViewSwitch(text: string) {
     //Update scores state to selected game
-    setHighScores(JSON.parse(localStorage.getItem(card.scorePath)));
+    let scorePath = localStorage.getItem(card.scorePath) ? (JSON.parse(localStorage.getItem(card.scorePath) || "")) : []
+    setHighScores(scorePath); //create utility
     //change the game window
     setWindowSelector(text);
   }
@@ -46,13 +54,13 @@ export default function GameCard({ setWindowSelector, setHighScores, card }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className="hr" sx={{ textAlign: "center" }} padding="0">
+      <CardActions className="hr" sx={{ textAlign: "center" , padding:"0"}} >
         <Button
           className="eightbit-btn eightbit-btn--reset"
           onClick={() => handleViewSwitch(card.scorePath)}
+          sx= {{padding:"10px"}}
           size="small"
           color="primary"
-          padding="10px"
         >
           High Scores
         </Button>

@@ -7,7 +7,7 @@ import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [windowSelector, setWindowSelector] = useState("loadingGif");
-  const [highScores, setHighScores] = useState([]);
+  const [highScores, setHighScores] = useState<number[]>([]);
 
   useEffect(() => {
     document.addEventListener("keydown", function (e) {
