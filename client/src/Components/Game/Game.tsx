@@ -7,15 +7,12 @@ import { sortScores } from "../../utils/sort";
 export default function Pong({ setHighScores, gameInfo }: {setHighScores: React.Dispatch<React.SetStateAction<number[]>>, gameInfo: {storageName:string, sourceName:string}}) {
   const [src, setSrc] = useState(gameInfo.sourceName);
 
-  // const getRandomStr = () => Math.random();
   let newScores;
   let savedScores = localStorage.getItem(gameInfo.storageName)? JSON.parse(localStorage.getItem(gameInfo.storageName)|| ""): [];
 
   useEffect(() => {
     const handleMessage = function (e: {data:string}) {
       let msgStr = e.data;
-      console.log(msgStr)
-      // let randomStr = getRandomStr();
       if (typeof msgStr === "string") {
         if (msgStr.startsWith("finalScore")) {
           let finalScore = msgStr.substring(12, msgStr.length - 1);
@@ -49,8 +46,6 @@ export default function Pong({ setHighScores, gameInfo }: {setHighScores: React.
       .classList.remove("hide");
   }, [gameInfo]);
 
-  // onClick={toggleFullScreen()}
-
   const toggleFullScreen = () => {
     if (gameInfo.storageName === "flappyBirdScores") {
       console.log("hello");
@@ -60,11 +55,9 @@ export default function Pong({ setHighScores, gameInfo }: {setHighScores: React.
         "Full Screen";
       document.querySelector("iframe")!.requestFullscreen();
     }
-    // document.querySelector(".iFrameDivContainer").requestFullscreen();
   };
   return (
     <>
-      {/* <div className="iFrameDivContainer"> */}
       <iframe
         id="gameFrame"
         frameBorder="0"
@@ -72,7 +65,6 @@ export default function Pong({ setHighScores, gameInfo }: {setHighScores: React.
         allowFullScreen={true}
         title="gameFrame"
       />
-      {/* </div> */}
 
       <div className="GameFlexContainer">
         <button

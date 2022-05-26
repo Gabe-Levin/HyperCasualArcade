@@ -55,7 +55,6 @@ function handleGameOver() {
     document.addEventListener(
       "keypress",
       function (e) {
-        console.log("we in here");
         if (e.key === "Enter") {
           window.location.reload();
         }
