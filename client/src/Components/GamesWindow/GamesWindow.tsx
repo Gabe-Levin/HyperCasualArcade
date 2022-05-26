@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HighScores from "../ScoreBoard/ScoreBoard";
 import "./GamesWindow.css";
 import Game from "../Game/Game";

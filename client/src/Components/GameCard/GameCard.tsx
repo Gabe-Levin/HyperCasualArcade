@@ -46,10 +46,11 @@ export default function GameCard({ setWindowSelector, setHighScores, card }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className="hr" sx={{ textAlign: "center" }} padding="0">
+      <CardActions className="hr" sx={{ textAlign: "center" , padding:"0"}} >
         <Button
           className="eightbit-btn eightbit-btn--reset"
           onClick={() => handleViewSwitch(card.scorePath)}
+          sx= {{padding:"10px"}}
           size="small"
           color="primary"
           padding="10px"

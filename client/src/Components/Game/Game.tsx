@@ -6,7 +6,7 @@ import "./Button.css";
 export default function Pong({ setHighScores, gameInfo }) {
   const [src, setSrc] = useState(gameInfo.sourceName);
 
-  const getRandomStr = () => Math.random();
+  // const getRandomStr = () => Math.random();
   let newScores;
   let savedScores = JSON.parse(localStorage.getItem(gameInfo.storageName));
 
@@ -14,7 +14,7 @@ export default function Pong({ setHighScores, gameInfo }) {
     const handleMessage = function (e) {
       let msgStr = e.data;
       console.log(msgStr)
-      let randomStr = getRandomStr();
+      // let randomStr = getRandomStr();
       if (typeof msgStr === "string") {
         if (msgStr.startsWith("finalScore")) {
           let finalScore = msgStr.substring(12, msgStr.length - 1);
@@ -69,6 +69,7 @@ export default function Pong({ setHighScores, gameInfo }) {
         frameBorder="0"
         src={gameInfo.sourceName}
         allowFullScreen={true}
+        title="gameFrame"
       />
       {/* </div> */}
 
