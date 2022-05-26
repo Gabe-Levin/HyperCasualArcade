@@ -8,10 +8,16 @@ import styled from "@emotion/styled";
 import "./GameCard.css";
 import "./Button.css";
 
-export default function GameCard({ setWindowSelector, setHighScores, card }) {
-  function handleViewSwitch(text) {
+interface GameCardProps {
+  setWindowSelector: React.Dispatch<React.SetStateAction<string>>, 
+  setHighScores: React.Dispatch<React.SetStateAction<number[]>>, 
+  card: any
+}
+
+export default function GameCard({ setWindowSelector, setHighScores, card }: GameCardProps) {
+  function handleViewSwitch(text: string) {
     //Update scores state to selected game
-    setHighScores(JSON.parse(localStorage.getItem(card.scorePath)));
+    setHighScores(JSON.parse(localStorage.getItem(card.scorePath) || "")); //create utility
     //change the game window
     setWindowSelector(text);
   }
@@ -53,7 +59,6 @@ export default function GameCard({ setWindowSelector, setHighScores, card }) {
           sx= {{padding:"10px"}}
           size="small"
           color="primary"
-          padding="10px"
         >
           High Scores
         </Button>

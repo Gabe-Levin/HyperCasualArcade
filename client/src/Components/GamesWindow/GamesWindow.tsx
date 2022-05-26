@@ -2,6 +2,7 @@ import React from "react";
 import HighScores from "../ScoreBoard/ScoreBoard";
 import "./GamesWindow.css";
 import Game from "../Game/Game";
+import { SetStateAction } from 'react';
 
 const gameInfoTable = {
   pong: {
@@ -22,12 +23,17 @@ export default function GamesWindow({
   windowSelector,
   highScores,
   setHighScores,
+}: {
+  windowSelector: string,
+  highScores: number[],
+  setHighScores: React.Dispatch<React.SetStateAction<number[]>>
 }) {
-  let localScores = JSON.parse(localStorage.getItem(windowSelector))
-    ? JSON.parse(localStorage.getItem(windowSelector)).slice(0, 10)
+  let localScores = JSON.parse(localStorage.getItem(windowSelector) || "")
+    ? JSON.parse(localStorage.getItem(windowSelector)|| "").slice(0, 10)
     : [];
 
-  function gameWindowSwitcher(windowSelector) {
+    
+  function gameWindowSwitcher(windowSelector: string) {
     if (windowSelector === "snake") {
       return (
         <Game setHighScores={setHighScores} gameInfo={gameInfoTable.snake} />
@@ -71,7 +77,7 @@ export default function GamesWindow({
     <div id="gameWindowContainer">
       {/* <img
         src="./imgs/backgroundAssets/meteor.gif"
-        alt="Bomberman"
+        alt="Bomberman" 
         className="meteor hide"
       ></img> */}
       <div id="gameWindow">{gameWindowSwitcher(windowSelector)}</div>
