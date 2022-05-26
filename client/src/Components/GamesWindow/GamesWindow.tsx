@@ -2,7 +2,6 @@ import React from "react";
 import HighScores from "../ScoreBoard/ScoreBoard";
 import "./GamesWindow.css";
 import Game from "../Game/Game";
-import { SetStateAction } from 'react';
 
 const gameInfoTable = {
   pong: {
@@ -28,7 +27,8 @@ export default function GamesWindow({
   highScores: number[],
   setHighScores: React.Dispatch<React.SetStateAction<number[]>>
 }) {
-  let localScores = JSON.parse(localStorage.getItem(windowSelector) || "")
+
+  let localScores = localStorage.getItem(windowSelector)
     ? JSON.parse(localStorage.getItem(windowSelector)|| "").slice(0, 10)
     : [];
 
