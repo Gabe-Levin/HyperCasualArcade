@@ -7,17 +7,19 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import styled from "@emotion/styled";
 import "./GameCard.css";
 import "./Button.css";
+import { ICard } from "../../interfaces/card.interfaces";
 
 interface GameCardProps {
   setWindowSelector: React.Dispatch<React.SetStateAction<string>>, 
   setHighScores: React.Dispatch<React.SetStateAction<number[]>>, 
-  card: any
+  card: ICard
 }
 
 export default function GameCard({ setWindowSelector, setHighScores, card }: GameCardProps) {
   function handleViewSwitch(text: string) {
     //Update scores state to selected game
-    setHighScores(JSON.parse(localStorage.getItem(card.scorePath) || "")); //create utility
+    let scorePath = localStorage.getItem(card.scorePath) ? (JSON.parse(localStorage.getItem(card.scorePath) || "")) : []
+    setHighScores(scorePath); //create utility
     //change the game window
     setWindowSelector(text);
   }

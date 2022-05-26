@@ -9,7 +9,7 @@ export default function Pong({ setHighScores, gameInfo }: {setHighScores: React.
 
   // const getRandomStr = () => Math.random();
   let newScores;
-  let savedScores = JSON.parse(localStorage.getItem(gameInfo.storageName)|| "");
+  let savedScores = localStorage.getItem(gameInfo.storageName)? JSON.parse(localStorage.getItem(gameInfo.storageName)|| ""): [];
 
   useEffect(() => {
     const handleMessage = function (e: {data:string}) {
@@ -19,9 +19,9 @@ export default function Pong({ setHighScores, gameInfo }: {setHighScores: React.
       if (typeof msgStr === "string") {
         if (msgStr.startsWith("finalScore")) {
           let finalScore = msgStr.substring(12, msgStr.length - 1);
-          let oldScores = JSON.parse(
+          let oldScores = localStorage.getItem(gameInfo.storageName)? JSON.parse(
             localStorage.getItem(gameInfo.storageName) || ""
-          );
+          ) : [];
           if (!oldScores) {
             newScores = [finalScore];
           } else {
