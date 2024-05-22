@@ -4,6 +4,8 @@ export const sortScores = (arr: number[]): number[] => {
   return newArr;
 };
 
-export default{
+const sortingModule = {
   sortScores
-}
+};
+
+export default sortingModule;
