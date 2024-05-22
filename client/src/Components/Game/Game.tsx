@@ -5,7 +5,7 @@ import "./Button.css";
 import { sortScores } from "../../utils/sort";
 
 export default function Pong({ setHighScores, gameInfo }: {setHighScores: React.Dispatch<React.SetStateAction<number[]>>, gameInfo: {storageName:string, sourceName:string}}) {
-  const [src, setSrc] = useState(gameInfo.sourceName);
+  // const [src, setSrc] = useState(gameInfo.sourceName);
 
   let newScores;
   let savedScores = localStorage.getItem(gameInfo.storageName)? JSON.parse(localStorage.getItem(gameInfo.storageName)|| ""): [];

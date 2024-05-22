@@ -68,7 +68,3 @@ export default function GameCard({ setWindowSelector, setHighScores, card }: Gam
     </Card>
   );
 }
-
-const SpecialHeader = styled.h1`
-  font-size: 5rem;
-`;
